@@ -149,7 +149,7 @@ while True:
     fruit_exists = True
     game_window.fill(BLACK)
     
-    # TODO 4: snakes should be green! let's make the window white too.
+    # TODO 4: snakes should be green! I think the fruit should also be red.
     for pos in snake_body:
         pygame.draw.rect(game_window, WHITE,
                          pygame.Rect(pos[0], pos[1], 10, 10))
@@ -180,5 +180,5 @@ while True:
 
     
     
-# TODO optional A: increase the speed of the snake every time it eats a fruit
+# TODO optional A: make the speed of the snake = the body length of the snake.
 # TODO optional B: change the color of the snake to a gradient.

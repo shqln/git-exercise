@@ -111,7 +111,10 @@ while True:
                 change_to = 'UP'
             if event.key == pygame.K_RIGHT:
                 change_to = 'RIGHT'
-            
+            if event.key == pygame.K_DOWN:
+                change_to = 'DOWN'
+            if event.key == pygame.K_LEFT:
+                change_to = 'LEFT'
 
     # If two keys pressed simultaneously
     # we don't want snake to move into two 

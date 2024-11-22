@@ -134,6 +134,10 @@ while True:
         snake_position[1] -= 10
     if direction == 'RIGHT':
         snake_position[0] += 10
+    if direction == 'DOWN':
+        snake_position[1] += 10
+    if direction == 'LEFT':
+        snake_position[0] -= 10
 
     # Snake body growing mechanism
     # if fruits and snakes collide then scores

@@ -146,6 +146,7 @@ while True:
     snake_body.insert(0, list(snake_position))
     if snake_position[0] == fruit_position[0] and snake_position[1] == fruit_position[1]:
         fruit_exists = False
+        score = score+10
     else:
         snake_body.pop()
         
@@ -158,25 +159,27 @@ while True:
     
     # TODO 4: snakes should be green! I think the fruit should also be red.
     for pos in snake_body:
-        pygame.draw.rect(game_window, WHITE,
+        pygame.draw.rect(game_window, GREEN,
                          pygame.Rect(pos[0], pos[1], 10, 10))
-    pygame.draw.rect(game_window, BLUE, pygame.Rect(
+    pygame.draw.rect(game_window, RED, pygame.Rect(
         fruit_position[0], fruit_position[1], 10, 10))
 
 
     # TODO 5: complete the game over conditions
     # Game Over conditions
     if snake_position[0] < 0 or snake_position[0] > WINDOW_X-10:
+        game_over()
         pass
     if snake_position[1] < 0 or snake_position[1] > WINDOW_Y-10:
+        game_over()
         pass
 
     # Touching the snake body
     for block in snake_body[1:]:
         if snake_position[0] == block[0] and snake_position[1] == block[1]:
             game_over()
-
-    # displaying score continuously
+            
+     # displaying score continuously
     show_score(1, WHITE, 'times new roman', 20)
 
     # Refresh game screen
@@ -184,8 +187,6 @@ while True:
 
     # Frame Per Second /Refresh Rate
     fps.tick(SNAKE_SPEED)
-
-    
     
 # TODO optional A: make the speed of the snake = the body length of the snake.
 # TODO optional B: change the color of the snake to a gradient.
